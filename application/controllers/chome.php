@@ -16,11 +16,10 @@ class Chome extends CI_Controller {
         $data['hbuku'] = $this->mhome->hitung_buku();
         $data['hpeminjaman'] = $this->mhome->hitung_tpeminjaman();
         $data['hpengembalian'] = $this->mhome->hitung_tpengembalian();
+        $data['qpopuler'] = $this->mpeminjaman->get_bukuPopuler();
         $this->load->view('header');
         $this->load->view('session/vhome',$data);
         $this->load->view('footer');
 
     }
 }
-
-?>

@@ -41,7 +41,7 @@
 														Tambah <i class="fa fa-plus"></i>
 													</a>
 												</div>
-												<div class="btn-group">
+												<div class="btn-group" hidden>
 													<a href="<?=base_url()?>cbuku/pdf" id="addRow"
 														class="btn btn-danger">
 														Ekspor PDF <i class="fa fa-file-pdf-o"></i>
@@ -77,14 +77,13 @@
 												<thead>
 													<tr>
 														<th></th>
-														<th>Kode Buku</th>
+														<th>ISBN</th>
 														<th>Judul</th>
 														<th>Penerbit</th>
 														<th>Pengarang</th>
 														<th>Tahun</th>
 														<th>Jumlah</th>
 														<th>Rak</th>
-														<th>Keterangan</th>
 														<th>Aksi</th>
 
 													</tr>
@@ -108,9 +107,8 @@
 														<td>
 															<?=$rowbuku->kode_buku?>
 														</td>
-														<td>
-															<?=$rowbuku->judul?>
-														</td>
+														<td><a href="<?=base_url()?>cbuku/detail_buku/<?=$rowbuku->buku_id?>"><?=$rowbuku->judul?></a>
+															</td>
 														<td>
 															<?=$rowbuku->penerbit?>
 														</td>
@@ -125,9 +123,6 @@
 														</td>
 														<td>
 															<?=$rowbuku->nama_rak?>
-														</td>
-														<td>
-															<?=$rowbuku->ket?>
 														</td>
 														<td>
 															<div class="btn-group">

@@ -119,7 +119,7 @@ if($act == 'add_save') {
                                         <span class="required"> * </span>
                                     </label>
                                     <div class="col-md-5">
-                                        <select class="form-control input-height" name="rak_id" id="sel1">
+                                        <select class="form-control select2" name="rak_id" id="sel1">
                                             <?php 
                                             foreach($qrak as $qr) {
                                                 if ($qr->rak_id == $rowdetbuku->rak_id) {
@@ -133,6 +133,7 @@ if($act == 'add_save') {
                                         </select>
                                     </div>
                                 </div>
+                                
                                 <div class="form-group row">
                                     <label class="control-label col-md-3">Keterangan
                                         <span class="required"> * </span>
@@ -147,7 +148,7 @@ if($act == 'add_save') {
                                         <button name="submit" type="submit" class="btn btn-success m-r-20"><i
                                                 class="fa fa-save"></i>
                                             Simpan</button><button
-                                                class="btn btn-danger">
+                                                class="btn btn-danger" type="reset" value="reset">
                                                 Reset</button>
                                         </div>
                                     </div>

@@ -7,11 +7,9 @@
                     <div class="page-title">Data Member</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
-                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.php">Home</a>&nbsp;<i
-                            class="fa fa-angle-right"></i>
+                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.php">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="index.php?page=penghuni">Data Member</a>&nbsp;<i
-                            class="fa fa-angle-right"></i>
+                    <li><a class="parent-item" href="index.php?page=penghuni">Data Member</a>&nbsp;<i class="fa fa-angle-right"></i>
                     </li>
                     <li class="active">Member</li>
                 </ol>
@@ -36,8 +34,7 @@
                                         <div class="row">
                                             <div class="col-md-6 col-sm-6 col-xs-6">
                                                 <div class="btn-group">
-                                                    <a href="<?=base_url()?>cmember/form/add" id="addRow"
-                                                        class="btn btn-info">
+                                                    <a href="<?= base_url() ?>cmember/form/add" id="addRow" class="btn btn-info">
                                                         Tambah <i class="fa fa-plus"></i>
                                                     </a>
                                                 </div>
@@ -66,55 +63,55 @@
                                             </div>
                                         </div>
                                         <div class="table-scrollable">
-                                            <table class="table table-hover table-checkable order-column full-width"
-                                                id="example4" style="width:100%;">
+                                            <table class="table table-hover table-checkable order-column full-width" id="example4" style="width:100%;">
                                                 <thead>
-            <tr>
-                <th>No.</th>
-                <!-- <th>Id Member</th> -->
-                <th>Kode Member</th>
-                <th>Nama</th>
-                <th>Alamat</th>
-                <th>No Identitas</th>
-                <th>Aksi</th>
-                </tr>
-        </thead>
-        <tbody>
-            <?php if(empty($qmember)) { ?>
-            <tr>
-                <td>John</td>
-                <td colspan="6">-</td>
-            </tr>
-            <?php }else {
-                $num = 0;
-                foreach ($qmember as $rowmember) {
-                $num++; ?>
-            <tr>
-                <td>
-                    <?=$num?>
-                </td>
-                <td>
-                    <?=$rowmember->kode_member?>
-                </td>
-                <td>
-                    <?=$rowmember->nama?>
-                </td>
-                <td>
-                    <?=$rowmember->alamat?>
-                </td>
-                <td>
-                    <?=$rowmember->no_identitas?>
-                </td>
-               <td>
-                    <div class="btn-group">
-                        <a href="<?=base_url()?>cmember/form/upd/<?=$rowmember->member_id?>" class="btn btn-primary" role="button">
-                        <span class="fa fa-pencil"></span></a>
-                        <a href="<?=base_url()?>cmember/del/<?=$rowmember->member_id?>" class="btn btn-danger ml-2" onclick="return confirm('Delete all about <?=$rowmember->nama?>')" role="button">
-                        <span class="fa fa-trash"></span></a>
-                    </div>
-                </td>
+                                                    <tr>
+                                                        <th>No.</th>
+                                                        <!-- <th>Id Member</th> -->
+                                                        <th>NIM</th>
+                                                        <th>Nama</th>
+                                                        <th>Alamat</th>
+                                                        <th>No Telp/Hp</th>
+                                                        <th>Aksi</th>
                                                     </tr>
-                                                    <?php }} ?>
+                                                </thead>
+                                                <tbody>
+                                                    <?php if (empty($qmember)) { ?>
+                                                        <tr>
+                                                            <td>John</td>
+                                                            <td colspan="6">-</td>
+                                                        </tr>
+                                                        <?php } else {
+                                                        $num = 0;
+                                                        foreach ($qmember as $rowmember) {
+                                                            $num++; ?>
+                                                            <tr>
+                                                                <td>
+                                                                    <?= $num ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?= $rowmember->kode_member ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?= $rowmember->nama ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?= $rowmember->alamat ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?= $rowmember->no_identitas ?>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="btn-group">
+                                                                        <a href="<?= base_url() ?>cmember/form/upd/<?= $rowmember->member_id ?>" class="btn btn-primary" role="button">
+                                                                            <span class="fa fa-pencil"></span></a>
+                                                                        <a href="<?= base_url() ?>cmember/del/<?= $rowmember->member_id ?>" class="btn btn-danger ml-2" onclick="return confirm('Delete all about <?= $rowmember->nama ?>')" role="button">
+                                                                            <span class="fa fa-trash"></span></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                    <?php }
+                                                    } ?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -125,7 +122,7 @@
                     </div>
                 </div>
             </div>
-           
+
         </div>
     </div>
 </div>

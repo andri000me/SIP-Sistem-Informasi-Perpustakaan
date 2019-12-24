@@ -71,7 +71,7 @@ class Cbuku extends CI_Controller {
             redirect('cbuku');
         }
     }
-
+    
     function del($id) {
         $this->mbuku->del($id);
         redirect('cbuku');
@@ -80,6 +80,14 @@ class Cbuku extends CI_Controller {
     function cetak() {
         $data['qbuku'] = $this->mbuku->get_allbuku();
         $this->load->view('vbuku_preview',$data);
+        $this->load->view('footer');
+    }
+
+    function detail_buku() {
+        $id = $this->uri->segment(3);
+        $data['qbuku'] = $this->mbuku->get_byid($id);
+        $this->load->view('header');
+        $this->load->view('vbuku_detail', $data);
         $this->load->view('footer');
     }
     function pdf() {

@@ -6,9 +6,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta name="description" content="Responsive Admin Template" />
-    <meta name="author" content="RedstarHospital" />
-    <title>Perpustakaan Mhankstap</title>
+    <meta name="description" content="Perpustakaan" />
+    <meta name="author" content="Fikri Firman Fadilah" />
+    <title>Perpustakaan UMP</title>
     <!-- google font -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css" />
 	<!-- icons -->
@@ -31,7 +31,7 @@
 						<img alt="" src="<?=base_url()?>assets/img/admin.png">
 					</span>
 					<span class="login100-form-title p-b-34 p-t-27">
-						Log in
+						Login Admin
 					</span>
 					<?php if(isset($error)) { echo $error; };  ?>
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
@@ -54,9 +54,8 @@
 						</button>
 					</div>
 					<div class="text-center p-t-30">
-						<a class="txt1" href="forgot_password.html">
-							Forgot Password?
-						</a>
+						<p style="color: white">Username : admin</p>
+						<p style="color: white">Password : 123456</p>
 					</div>
 				</form>
 			</div>

@@ -7,11 +7,9 @@
 					<div class="page-title">Data Pengembalian</div>
 				</div>
 				<ol class="breadcrumb page-breadcrumb pull-right">
-					<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.php">Home</a>&nbsp;<i
-							class="fa fa-angle-right"></i>
+					<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.php">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
 					</li>
-					<li><a class="parent-item" href="index.php?page=penghuni">Data Pengembalian</a>&nbsp;<i
-							class="fa fa-angle-right"></i>
+					<li><a class="parent-item" href="index.php?page=penghuni">Data Pengembalian</a>&nbsp;<i class="fa fa-angle-right"></i>
 					</li>
 					<li class="active">Pengembalian</li>
 				</ol>
@@ -34,7 +32,7 @@
 									</div>
 									<div class="card-body ">
 										<div class="row">
-											
+
 											<div class="col-md-6 col-sm-6 col-xs-6">
 												<div class="btn-group pull-right">
 													<!-- <a class="btn deepPink-bgcolor  btn-outline dropdown-toggle"
@@ -59,8 +57,7 @@
 											</div>
 										</div>
 										<div class="table-scrollable">
-											<table class="table table-hover table-checkable order-column full-width"
-												id="example4" style="width:100%;">
+											<table class="table table-hover table-checkable order-column full-width" id="example4" style="width:100%;">
 												<thead>
 													<tr>
 														<th>No.</th>
@@ -68,53 +65,53 @@
 														<th>Judul</th>
 														<th>Jumlah</th>
 														<th>Tanggal Pinjam</th>
-														<th>Tanggal Kembali</th>
+														<th>Tanggal Pengembalian</th>
 														<th>Status</th>
-														
-														
+
+
 													</tr>
 												</thead>
 												<tbody>
-													<?php if(empty($qpengembalian)) { ?>
-													<tr>
-														<td>John</td>
-														<td colspan="6">-</td>
-													</tr>
-													<?php }else {
-                $num = 0;
-                foreach ($qpengembalian as $rowpengembalian) {
-                $num++; ?>
-													<tr>
-														<td>
-															<?=$num?>
-														</td>
-														<td>
-															<?=$rowpengembalian->nama?>
-														</td>
-														<td>
-															<i class="fa fa-book"></i> <?=$rowpengembalian->judul?>
-														</td>
-														
-														<td>
-															<?=$rowpengembalian->jumlah_pinjam?>
-														</td>
-														<td>
-															<?php 
-																$tstmp = strtotime($rowpengembalian->tgl_pinjam);
-																echo $tgl_p = date('d-m-Y', $tstmp);
-															?>
-														</td>
-														<td>
-														<?php 
-																$tstmp2 = strtotime($rowpengembalian->tgl_kembali);
-																echo $tgl_k = date('d-m-Y', $tstmp2);
-															?>
-														</td>
-														<td>
-															<button id="btnPinjam" class="btn btn-circle btn-success btn-xs m-b-10"><?=$rowpengembalian->status?></button>
-														</td>
+													<?php if (empty($qpengembalian)) { ?>
+														<tr>
+															<td>Kosong</td>
+															<td colspan="6">-</td>
 														</tr>
-													<?php }} ?>
+														<?php } else {
+															$num = 0;
+															foreach ($qpengembalian as $rowpengembalian) {
+																$num++; ?>
+															<tr>
+																<td>
+																	<?= $num ?>
+																</td>
+																<td>
+																	<?= $rowpengembalian->nama ?>
+																</td>
+																<td><a href="<?= base_url() ?>cbuku/detail_buku/<?= $rowpengembalian->buku_id ?>"><?= $rowpengembalian->judul ?></a>
+																</td>
+
+																<td>
+																	<?= $rowpengembalian->jumlah_pinjam ?>
+																</td>
+																<td>
+																	<?php
+																			$tstmp = strtotime($rowpengembalian->tgl_pinjam);
+																			echo $tgl_p = date('d-m-Y', $tstmp);
+																			?>
+																</td>
+																<td>
+																	<?php
+																			$tstmp2 = strtotime($rowpengembalian->tgl_pengembalian);
+																			echo $tgl_k = date('d-m-Y', $tstmp2);
+																			?>
+																</td>
+																<td>
+																	<button id="btnPinjam" class="btn btn-circle btn-success btn-xs m-b-10"><?= $rowpengembalian->status ?></button>
+																</td>
+															</tr>
+													<?php }
+													} ?>
 												</tbody>
 											</table>
 										</div>

@@ -25,6 +25,7 @@ class Cpeminjaman extends CI_Controller {
         $member_id = addslashes($this->input->post('member_id'));
         $buku_id = addslashes($this->input->post('buku_id'));
         $tgl_pinjam = date('Y-m-d');
+        $tgl_pengembalian = date('Y-m-d');
         // set 7 hari
         $date = strtotime("+7 day");
         $t = date('Y-m-d', $date);
@@ -53,7 +54,7 @@ class Cpeminjaman extends CI_Controller {
                 'ket_pinjam'=>$ket_pinjam
             );
             $this->mpeminjaman->ins($data);
-            redirect('cpeminjaman');
+            redirect('chome');
         }elseif ($to=="upd") {
             $data['title'] = "Ubah Peminjaman";
             $data['act'] = "upd_save";
@@ -67,10 +68,18 @@ class Cpeminjaman extends CI_Controller {
                 'member_id'=>$member_id,
                 'buku_id'=>$buku_id,
                 'tgl_pinjam'=>$tgl_pinjam,
-                'tgl_kembali'=>$tgl_kembali,
+                'tgl_pengembalian'=>$tgl_pengembalian,
                 'jumlah_pinjam'=>$jumlah,
                 'status'=>$status,
                 'ket_pinjam'=>$ket_pinjam
+            );
+            $this->mpeminjaman->upd($id,$data);
+            redirect('cpeminjaman');
+        }elseif ($to=="upd_pengembalian") {
+            $data=array(
+                
+                'tgl_pengembalian'=>$tgl_pengembalian,
+                'status'=>'Kembali'
             );
             $this->mpeminjaman->upd($id,$data);
             redirect('cpeminjaman');

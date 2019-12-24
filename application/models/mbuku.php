@@ -36,6 +36,16 @@ class Mbuku extends CI_Model {
 
         return TRUE;
     }
+    // function detail_buku($id) {
+    //     $this->db->from($this->tabel);
+    //     $this->db->where('buku_id',$id);
+       
+    //     $query = $this->db->get();
+
+    //     if($query->num_rows() > 0) {
+    //         return $query->result();
+    //     }
+    // }
 
     function del($id) {
         $this->db->where('buku_id',$id);

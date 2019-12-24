@@ -15,7 +15,7 @@ if($this->session->userdata('status') != "login"){
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="RedstarHospital" />
-    <title>Perpustakaan</title>
+    <title>Perpustakaan UMP</title>
     <!-- google font -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css" />
 	<!-- icons -->
@@ -39,6 +39,13 @@ if($this->session->userdata('status') != "login"){
     <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet" type="text/css" />
     <link href="<?=base_url()?>assets/css/responsive.css" rel="stylesheet" type="text/css" />
     <link href="<?=base_url()?>assets/css/theme-color.css" rel="stylesheet" type="text/css" />
+	<!-- dropzone -->
+    <link href="<?=base_url()?>assets/dropzone/dropzone.css" rel="stylesheet" media="screen">
+    <!--tagsinput-->
+    <link href="<?=base_url()?>assets/jquery-tags-input/jquery-tags-input.css" rel="stylesheet">
+    <!--select2-->
+    <link href="<?=base_url()?>assets/select2/css/select2.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url()?>assets/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<!-- favicon -->
     <link rel="shortcut icon" href="<?=base_url()?>assets/img/favicon.ico" /> 
  </head>
@@ -52,7 +59,7 @@ if($this->session->userdata('status') != "login"){
                 <div class="page-logo">
                     <a href="<?=site_url()?>chome">
                     <!-- <span class="logo-icon fa fa-wifi"></span> -->
-                    <span class="logo-default" ><i class="fa fa-book"></i> Perpustakaan</span> </a>
+                    <span class="logo-default" ><i class="fa fa-book"></i> Perpus UMP</span> </a>
                 </div>
                 <!-- logo end -->
 				<ul class="nav navbar-nav navbar-left in">
